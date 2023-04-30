@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Cart;
 use App\Entity\ContentCart;
+use App\Repository\ProductRepository;
 use DateTime;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,9 +19,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class StripeController extends AbstractController
 {
     #[Route('/stripe', name: 'app_stripe')]
-    public function index(SessionInterface $session, EntityManagerInterface $em): Response
+    public function index(): Response
     {
-       
+        
+
         if($this->getUser()){
             return $this->render('stripe/index.html.twig', [
                 'controller_name' => 'StripeController',
@@ -29,13 +31,12 @@ class StripeController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        $panier = $session->get('panier', []);
-        dd($panier);
+
         
     }
 
     #[Route('/stripe/payment', name: 'stripe_payment')]
-    public function payment()
+    public function payment(SessionInterface $session, EntityManagerInterface $em, ProductRepository $productRepository)
     {
         //récup la clé API
         $stripeSecretKey = $this->getParameter('stripe_sk');
@@ -57,6 +58,31 @@ class StripeController extends AbstractController
                 'paymentIntent' => $paymentIntent,
                 'clientSecret' => $paymentIntent->client_secret,
             ];
+
+                $cart = new Cart;
+            // Récupérez l'utilisateur connecté
+            $user = $this->getUser();
+    
+            $cart->setUser($user);
+            $cart->setPurchaseDate(new DateTime());
+            $cart->setStatus(1);
+    
+            $em->persist($cart);
+            $em->flush();
+    
+            $panier = $session->get('panier', []);
+            foreach($panier as $key => $item){
+                $contentCart = new ContentCart;
+                $contentCart->setQuantity($item);
+                $contentCart->setCart($cart);
+                $product = $productRepository->find($key);
+                $contentCart->addProduct($product);
+                $contentCart->setAddedDate(new DateTime());
+                $em->persist($contentCart);
+                $em->flush();
+    
+            }
+    
 
              //echo json_encode($output);
              return new JsonResponse($output);
