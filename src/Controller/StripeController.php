@@ -2,18 +2,25 @@
 
 namespace App\Controller;
 
+use App\Entity\Cart;
+use App\Entity\ContentCart;
+use DateTime;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 
 class StripeController extends AbstractController
 {
     #[Route('/stripe', name: 'app_stripe')]
-    public function index(): Response
+    public function index(SessionInterface $session, EntityManagerInterface $em): Response
     {
-
+       
         if($this->getUser()){
             return $this->render('stripe/index.html.twig', [
                 'controller_name' => 'StripeController',
@@ -21,6 +28,9 @@ class StripeController extends AbstractController
         }else{
             return $this->redirectToRoute('app_login');
         }
+
+        $panier = $session->get('panier', []);
+        dd($panier);
         
     }
 
