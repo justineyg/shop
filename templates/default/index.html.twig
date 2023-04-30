@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <h2>La liste des produits</h2>
+        {% for product in products %}
+        <div>
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description|raw|striptags  }}</p>
+                    <p>{{ product.price }} €</p>
+                    <p>{{ product.stock }}</p>
+                    <p><img src="{{asset('/uploads/'~ product.image) }}" style="max-width: 300px;"></p>
+
+                    <p><a href="{{ path('show', {'id': product.id}) }}" class="btn btn-primary">Voir plus</a></p>
+                  
+        
+        {% endfor %}
+{% endblock %}
+
