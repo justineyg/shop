@@ -4,6 +4,10 @@ home :
 user :
    title : Mon compte
 
+product : 
+  Not_find : Pas de produits trouvés
+  Added : Produit ajouté
+
 Name: Prénom
 Firstname : Nom
 Email : Email
@@ -27,3 +31,10 @@ Login : Se connecter
 Logout : Se déconnecter
 Please Login : Veuillez vous connecter
 Password: Mot de passe
+Sign in : Se connecter
+
+Register : Se créer un compte
+Stripe :
+  Pay now : Payez maintenant
+Product : 
+  Not_find : Pas de produits trouvés

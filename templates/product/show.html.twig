@@ -5,7 +5,7 @@
 {% block body %}
     <h2>{{ product.name }}</h2>
 
-    <table class="table">
+    <table class="table_show">
         <tbody>
             <tr>
                 <td>{{ product.description|raw|striptags }}</td>
@@ -27,8 +27,25 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_product_index') }}" class="btn btn-primary">{{ 'Back' | trans }} </a>
+    <p><a href="{{ path('app_product_index') }}" class="btn btn-primary">{{ 'Back' | trans }} </a>
 
-    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-secondary">{{ 'Modify' | trans }}</a>
+    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-secondary">{{ 'Modify' | trans }}</a></p>
+
+   <footer>
+        <section class="contact">
+        <p>Contact : justine.patisserie@gmail.com</p>
+        <p>+(33) 07 54 83 92 03</p>
+        </section>
+
+        <section class="social_networks">
+            <ul>
+
+                <li><i class="fa-brands fa-facebook-f"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+            </ul>
+            <p>Copyright 2023 ©JustineYang</p>
+        </section>
+        </footer>
 
 {% endblock %}

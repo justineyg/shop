@@ -1,95 +1,128 @@
-        a {
-            text-decoration: none;
-        }
-        
-        nav a:visited {
-            color: #000;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-            padding: 0px 50px;
-        }
-        
-        header {
-            margin: 20px 0;
-        }
-        
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        
-        h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-        
-        h3 {
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-        
-        nav ul:last-child {
-            display: flex;
-            justify-content: end;
-            gap: 20px;
-        }
-        
-        li {
-            text-decoration: none;
-        }
-        
-        .card_section {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-            width: 45%;
-            padding: 30px;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .product_description p:not(:last-child) {
-            margin-bottom: 20px;
-        }
-        
-        .price {
-            font-weight: bold;
-        }
-        
-        .contact {
-            display: flex;
-            justify-content: center;
-        }
-        
-        footer {
-            padding: 50px;
-            text-align: center;
-        }
-        
-        .contact ul {}
-        
-        .social_networks ul {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .social_networks ul li {
-            padding: 20px;
-        }
+            a {
+                text-decoration: none;
+            }
+            
+            nav a:visited {
+                color: #000;
+            }
+            
+            body {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 300;
+                padding: 0px 50px;
+            }
+            
+            header {
+                margin: 20px 0;
+            }
+            
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+            
+            nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 40px;
+            }
+            
+            nav ul:last-child {
+                display: flex;
+                justify-content: end;
+                gap: 20px;
+            }
+            
+            li {
+                text-decoration: none;
+            }
+            
+            .card_section {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+                width: 45%;
+                padding: 30px;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .product_description p:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            
+            .price {
+                font-weight: bold;
+            }
+            
+            .contact {
+                display: flex;
+                justify-content: center;
+            }
+            
+            footer {
+                padding: 50px;
+                text-align: center;
+            }
+            
+            .contact p:first-child {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+            
+            .social_networks ul {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .social_networks ul li {
+                padding: 20px;
+            }
+            
+            .btn {
+                margin: 20px 0;
+            }
+            
+            .account {
+                margin: 15px 0;
+            }
+            
+            label {
+                margin: 10px;
+            }
+            
+            .table_card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+            }
+            
+            table {
+                margin-top: 1em;
+            }
+            
+            .table_show {
+                display: flex;
+            }
+            
+            td,
+            th {
+                padding: 20px;
+            }

@@ -4,6 +4,11 @@ user :
   title: My account
 login: 
   title: Please Login
+
+product : 
+  Not_find : Products not find
+  Added : Produit ajouté
+
 Name: Name
 Firstname : Firstname
 Email : Email
@@ -25,3 +30,8 @@ Create an account : Create an account
 Login : Login
 Please Login : Please Login
 Password : Password
+Sign in : Sign in
+Register : Register
+
+Stripe : 
+  Pay now : Pay now

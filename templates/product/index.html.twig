@@ -5,34 +5,53 @@
 {% block body %}
     <h1>{{'home.title' |trans}}</h1>
 
-    <table class="table">
+    <table>
         <thead>
             <tr>
-                <th>{{ 'Name' | trans }}</th>
-                <th>{{ 'Description' | trans }}</th>
-                <th>{{ 'Price' | trans }}</th>
-                <th>{{ 'Image' | trans }}</th>
+                <th colspan="2">{{ 'Name' | trans }}</th>
+                <th colspan="4">{{ 'Description' | trans }}</th>
+                <th colspan="3">{{ 'Price' | trans }}</th>
+                <th colspan="3">{{ 'Image' | trans }}</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
         {% for product in products %}
-            <tr>
-                <td>{{ product.name }}</td>
-                <td>{{ product.description|raw|striptags }}</td>
-                <td>{{ product.price }} €</td>
-                <td><img src="{{asset('/uploads/'~ product.image) }}" style="max-width: 300px;"></td>
+            <tr  class="table_card">
+                <td colspan="2">{{ product.name }}</td>
+                <td colspan="4">{{ product.description|raw|striptags }}</td>
+                <td colspan="3">{{ product.price }} €</td>
+                <td colspan="3"><img src="{{asset('/uploads/'~ product.image) }}" style="max-width: 100px; max-height: 100px; object-fit: cover;"></td>
                 <td>
-                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-primary">Voir</a>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-primary">{{ 'More' | trans}}</a>
+                    {% if app.user %}
                     <a href="{{ path('cart_add', {'id': product.id}) }}" class="btn btn-secondary" >{{ 'Add' | trans}}</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">Pas de produits trouvés</td>
+                <td colspan="7">{{ 'Not_find' | trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+
+<footer>
+        <section class="contact">
+        <p>Contact : justine.patisserie@gmail.com</p>
+        <p>+(33) 07 54 83 92 03</p>
+        </section>
+
+        <section class="social_networks">
+            <ul>
+
+                <li><i class="fa-brands fa-facebook-f"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+            </ul>
+            <p>Copyright 2023 ©JustineYang</p>
+        </section>
+        </footer>
 
 {% endblock %}
