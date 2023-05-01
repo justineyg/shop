@@ -1,0 +1,29 @@
+home : 
+  title : Liste des produits 
+
+user :
+   title : Mon compte
+
+Name: Prénom
+Firstname : Nom
+Email : Email
+City : Ville
+Description : Description
+Quantity: Quantité
+Price : Prix
+Save : Sauvegarder
+Image : image
+Total : Total
+More : Voir plus
+Our products : Nos produits 
+Dashboard : Tableau de bord
+Add : Ajouter
+Back : Retour
+My account : Mon compte
+Modify : Modifier
+To validate : Valider
+Create an account : Créer un compte 
+Login : Se connecter
+Logout : Se déconnecter
+Please Login : Veuillez vous connecter
+Password: Mot de passe

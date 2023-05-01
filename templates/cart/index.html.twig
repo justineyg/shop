@@ -9,13 +9,13 @@
 </div>
 
     {% if items | length > 0 %}
-    <table class="table">
+    <table class="table cart">
         <thead>
             <tr>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Total</th>
+                <th>{{ 'Name' | trans }}</th>
+                <th>{{ 'Price' | trans }}</th>
+                <th>{{ 'Quantity' | trans }}</th>
+                <th>{{ 'Total' | trans }}</th>
                 <th></th>
             </tr>
         </thead>
@@ -36,9 +36,9 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="3">Total :</td>
+                <td colspan="3" class="text-right">Total :</td>
                 <td>{{ total }} </td>
-                <td><a href="{{ path('app_stripe')}}" class="btn btn-primary">Valider</a></td>
+                <td><a href="{{ path('app_stripe')}}" class="btn btn-primary">{{ 'To validate' | trans }}</a></td>
             </tr>
         </tfoot>
     </table>

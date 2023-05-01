@@ -1,0 +1,27 @@
+home : 
+  title : Products list
+user :
+  title: My account
+login: 
+  title: Please Login
+Name: Name
+Firstname : Firstname
+Email : Email
+City : City
+Description : Description
+Quantity: Quantity
+Price : Price
+Save : Save
+Image : image
+Total : Total
+More : More
+Our products : Our products
+Dashboard : Dashboard
+Back : Back
+My account : My account
+Modify : Modify 
+To validate : To validate
+Create an account : Create an account
+Login : Login
+Please Login : Please Login
+Password : Password

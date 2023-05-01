@@ -20,15 +20,15 @@
                 <p><img src="{{asset('/uploads/'~ product.image) }}" style="max-width: 300px;"></p>
             </tr>
             <tr>
-                <p><a href="{{ path('cart_add', {'id': product.id}) }}"><i class="fas fa-shopping-cart mr-1"></i>Ajouter</a>
+                <p><a href="{{ path('cart_add', {'id': product.id}) }}"  class="btn btn-primary"><i class="fas fa-shopping-cart mr-1"></i>{{ 'Add' | trans}}</a>
                 </p>
             </tr>
 
         </tbody>
     </table>
 
-    <a href="{{ path('app_product_index') }}" class="btn btn-primary">Retour</a>
+    <a href="{{ path('app_product_index') }}" class="btn btn-primary">{{ 'Back' | trans }} </a>
 
-    <a href="{{ path('app_product_edit', {'id': product.id}) }}">Modifier</a>
+    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-secondary">{{ 'Modify' | trans }}</a>
 
 {% endblock %}
