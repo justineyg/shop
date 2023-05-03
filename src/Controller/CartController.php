@@ -50,7 +50,7 @@ class CartController extends AbstractController
         }
 
         $session->set('panier', $panier);
-        
+        $this->addFlash('success', 'Produit ajouté !');
         // $em->persist($content_cart);
         // $em->flush();
         return $this->redirectToRoute('app_cart');
@@ -66,7 +66,7 @@ class CartController extends AbstractController
         }
 
         $session->set('panier', $panier);
-
+        $this->addFlash('success', 'Produit supprimé');
         return $this->redirectToRoute(('app_cart'));
     }
 

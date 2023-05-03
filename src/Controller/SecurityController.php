@@ -23,6 +23,7 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+
         
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
@@ -30,10 +31,17 @@ class SecurityController extends AbstractController
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void
     {
-        
+
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
-
+    /**
+    * @Route("/logout_message", name="logout_message")
+    */
+    public function logoutMessage()
+    {
+        $this->addFlash('success', "Vous êtes déconnecté. À bientôt !");
+        return $this->redirectToRoute('app_home');
+    }
     #[Route(path: '/user', name:'app_user')]
     public function index( EntityManagerInterface $em, Request $r): Response{
         $user = $this->getUser();
@@ -46,12 +54,13 @@ class SecurityController extends AbstractController
             $em->persist($user); // Prépare la requete
             $em->flush(); // Execute la requete
             
-
+            $this->addFlash('success', 'Modification réussie !');
         }
-
+        
         return $this->render('/user/index.html.twig', [
             'user'=> $user,
             'form' => $form->createView()
         ]);
     }
+
 }

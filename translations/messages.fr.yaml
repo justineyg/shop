@@ -8,6 +8,11 @@ product :
   Not_find : Pas de produits trouvés
   Added : Produit ajouté
 
+show : 
+  strawberry : La tarte aux fraises est un dessert composé principalement de fraises et de sucre dans une croûte de tarte, parfois avec de la gélatine. Il est souvent servi avec de la crème fouettée.
+
+  lemon : La tarte au citron est une tarte sucrée garnie de crème à base de citron. Elle ne comprend aucun fruit. La crème est un mélange d'œufs, de sucre, de jus de citron et de zeste de citron. Également appelée lemon curd, c'est cette crème qui donne à la tarte son goût.
+
 Name: Prénom
 Firstname : Nom
 Email : Email
@@ -38,3 +43,4 @@ Stripe :
   Pay now : Payez maintenant
 Product : 
   Not_find : Pas de produits trouvés
+

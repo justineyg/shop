@@ -14,13 +14,13 @@
                 <td>{{ product.price }} €</td>
             </tr>
             <tr>
-                <td>{{ product.stock }}</td>
+                <td>{{ product.stock }} qté</td>
             </tr>
             <tr>
                 <p><img src="{{asset('/uploads/'~ product.image) }}" style="max-width: 300px;"></p>
             </tr>
             <tr>
-                <p><a href="{{ path('cart_add', {'id': product.id}) }}"  class="btn btn-primary"><i class="fas fa-shopping-cart mr-1"></i>{{ 'Add' | trans}}</a>
+                <p><a href="{{ path('cart_add', {'id': product.id}) }}"  class="btn btn-primary"><i class="fas fa-shopping-cart mr-1"></i> {{ 'Add' | trans}}</a>
                 </p>
             </tr>
 
