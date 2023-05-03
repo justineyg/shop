@@ -3,33 +3,39 @@
 {% block title %}Product{% endblock %}
 
 {% block body %}
-    <h2>{{ product.name }}</h2>
+    
 
-    <table class="table_show">
-        <tbody>
-            <tr>
-                <td>{{ product.description|raw|striptags }}</td>
-            </tr>
-            <tr>
-                <td>{{ product.price }} €</td>
-            </tr>
-            <tr>
-                <td>{{ product.stock }} qté</td>
-            </tr>
-            <tr>
-                <p><img src="{{asset('/uploads/'~ product.image) }}" style="max-width: 300px;"></p>
-            </tr>
-            <tr>
+    <div class="product">
+    <div class="side_one">
+            <h2>{{ product.name }}</h2>
+                <p>{{ product.description|raw|striptags }}</p>
+            <br><br>
+            <p>
+                {{ product.price }} €
+            </p>
+            <br>
+            
+            <p>
+                {{ product.stock }} qté
+            </p>
+            <br>
                 <p><a href="{{ path('cart_add', {'id': product.id}) }}"  class="btn btn-primary"><i class="fas fa-shopping-cart mr-1"></i> {{ 'Add' | trans}}</a>
                 </p>
-            </tr>
+             <p>
+                <a href="{{ path('app_product_index') }}" class="btn btn-light">{{ 'Back' | trans }} </a>
+                <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-secondary">{{ 'Modify' | trans }}</a>
+            </p>
+            </div>
+            <div class="side_two">
+            <p>
+                <img src="{{asset('/uploads/'~ product.image) }}" style="max-width: 300px;">
+            </p>
 
-        </tbody>
-    </table>
+            </div>
 
-    <p><a href="{{ path('app_product_index') }}" class="btn btn-primary">{{ 'Back' | trans }} </a>
+       </div>
 
-    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-secondary">{{ 'Modify' | trans }}</a></p>
+   
 
    <footer>
         <section class="contact">
