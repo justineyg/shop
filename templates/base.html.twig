@@ -32,6 +32,7 @@
                     <li>
                 </ul>
                 <ul>
+                 
                     <li>
                         <a href="{{ path('app_home') }}"><i class="fa-solid fa-house"></i></a>
                     </li>
@@ -45,8 +46,10 @@
                         {% endif %}
                 
                 {% if app.user %}
+                  
                     <li>
-                        <a href="{{path('app_user')}}"><i class="fa-solid fa-user"></i></a>
+                        <a href="{{path('app_user')}}"><i class="fa-solid fa-user"></i></a> 
+
                     </li>
                     <li>
                         <a href="{{ path('app_logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -63,8 +66,15 @@
                         <a href="{{ path('app_cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
                     </li>
             </ul>
+             
             </nav>
+            
         </header>
+         {% if app.user %}
+        <div class="mb-3" style="text-align: end">
+           {{ 'Hello' | trans}} {{ app.user.name}}
+        </div>
+    {% endif %}
         {% for type, messages in app.flashes %}
             {% for m in messages %}
             <p class="alert alert-{{type}}"> {{ m }}</p>
